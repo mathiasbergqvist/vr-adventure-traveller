@@ -2,6 +2,7 @@ import React from "react";
 import { AppRegistry, StyleSheet, Text, View } from "react-360";
 import styles from "./styles";
 import destinations from "./data/destinations";
+import { getBackgrounds } from "./api/api";
 
 export default class VrAdventureTraveller extends React.Component {
   constructor() {
@@ -10,6 +11,18 @@ export default class VrAdventureTraveller extends React.Component {
       currentDestinationId: 0,
       destinations: destinations
     };
+  }
+
+  componentWillMount() {
+    getBackgrounds(this.state.destinations).then(
+      destinationsWithBackgroundImage => {
+        this.setState({
+          background: destinationsWithBackgroundImage[0].background,
+          currentDestination: 0,
+          destinations: destinationsWithBackgroundImage
+        });
+      }
+    );
   }
 
   render() {
