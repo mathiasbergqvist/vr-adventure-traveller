@@ -1,7 +1,14 @@
 import { StyleSheet } from "react-360";
 
 const styles = StyleSheet.create({
-  welcomePanel: {
+  panel: {
+    width: 1000,
+    height: 600,
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  welcomeHeader: {
     backgroundColor: "#ef5350",
     fontSize: 75,
     fontWeight: "400",

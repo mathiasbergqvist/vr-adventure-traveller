@@ -50,8 +50,8 @@ export default class VrAdventureTraveller extends React.Component {
 
   render() {
     return (
-      <View style={stylesDefault.panel}>
-        <Text style={styles.welcomePanel}>React 360 adventure traveller</Text>
+      <View style={styles.panel}>
+        <Text style={styles.welcomeHeader}>React 360 adventure traveller</Text>
         <View style={styles.menuWrapper}>
           {this.state.destinations.map(destination => {
             return (
@@ -73,26 +73,6 @@ export default class VrAdventureTraveller extends React.Component {
     );
   }
 }
-
-const stylesDefault = StyleSheet.create({
-  panel: {
-    // Fill the entire surface
-    width: 1000,
-    height: 600,
-    backgroundColor: "rgba(255, 255, 255, 0.4)",
-    justifyContent: "center",
-    alignItems: "center"
-  },
-  greetingBox: {
-    padding: 20,
-    backgroundColor: "#000000",
-    borderColor: "#639dda",
-    borderWidth: 2
-  },
-  greeting: {
-    fontSize: 30
-  }
-});
 
 AppRegistry.registerComponent(
   "VrAdventureTraveller",
