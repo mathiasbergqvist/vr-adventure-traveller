@@ -2,7 +2,6 @@
 // If you want to modify your application's content, start in "index.js"
 
 import {ReactInstance} from 'react-360-web';
-require('dotenv').config();
 
 function init(bundle, parent, options = {}) {
   const r360 = new ReactInstance(bundle, parent, {
