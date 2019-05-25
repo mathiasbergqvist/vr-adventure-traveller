@@ -24,9 +24,11 @@ export default class VrAdventureTraveller extends React.Component {
     getBackgrounds(this.state.destinations).then(
       destinationsWithBackgroundImage => {
         this.setState({
-          background: destinationsWithBackgroundImage[0].background,
           currentDestination: 0,
           destinations: destinationsWithBackgroundImage
+        });
+        Environment.setBackgroundImage({
+          uri: destinationsWithBackgroundImage[0].background
         });
       }
     );

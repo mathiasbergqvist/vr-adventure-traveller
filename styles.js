@@ -3,7 +3,7 @@ import { StyleSheet } from "react-360";
 const styles = StyleSheet.create({
   welcomePanel: {
     backgroundColor: "#ef5350",
-    fontSize: 80,
+    fontSize: 75,
     fontWeight: "400",
     layoutOrigin: [0.5, 0.5],
     paddingLeft: 20,
