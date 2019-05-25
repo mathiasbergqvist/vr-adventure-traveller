@@ -14,7 +14,7 @@ const destinations = [
   },
   {
     id: 2,
-    photoId: 40842804183,
+    photoId: 14646855999,
     background: null,
     description: "Grand Canyon"
   },
