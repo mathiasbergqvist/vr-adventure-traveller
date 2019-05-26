@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-360/scripts/packager.js",
+    "start:prod": "node server.js",
     "bundle": "node node_modules/react-360/scripts/bundle.js",
     "open": "node -e \"require('xopen')('http://localhost:8081/index.html')\"",
     "devtools": "react-devtools",
@@ -12,6 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "^8.0.0",
+    "express": "^4.17.1",
     "react": "16.3.2",
     "react-360": "~1.1.0",
     "react-360-web": "~1.1.0",
@@ -28,5 +30,8 @@
   },
   "jest": {
     "preset": "react-360"
+  },
+  "engines": {
+    "node": "10.13.0"
   }
 }
