@@ -24,18 +24,15 @@ export const getBackgrounds = async (destinations) => {
 };
 
 export const getImage = (photoId, id) => {
-  const FLICKR_API_KEY=process.env.FLICKR_API_KEY;
+  const FLICKR_API_KEY="294f34ea89e701cd06bf7f63d4b7e8c5";
   const flickrUrl = `https://api.flickr.com/services/rest/?method=flickr.photos.getSizes&api_key=${FLICKR_API_KEY}&photo_id=${photoId}&format=json&nojsoncallback=1`;
-
-  console.log(`getImage: ${photoId}`);
 
   return axios
     .get(flickrUrl)
     .then(data => {
-      console.log(`DATA for ${photoId}`, data);
       return data.data.sizes.size;
     })
-    .then(allSizes => allSizes.filter(size => size.label === "Large"))
+    .then(allSizes => allSizes.filter(size => size.label === "VR 4k"))
     .then(image => {
       return {
         id,
