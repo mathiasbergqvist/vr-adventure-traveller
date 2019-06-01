@@ -1,6 +1,6 @@
 {
   "name": "VrAdventureTraveller",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-360/scripts/packager.js",

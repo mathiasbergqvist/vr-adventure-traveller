@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  asset,
   AppRegistry,
   StyleSheet,
   Text,
@@ -10,6 +11,31 @@ import {
 import styles from "./styles";
 import destinations from "./data/destinations";
 import { getBackgrounds } from "./api/api";
+import {
+  getLavaPlanet,
+  getAeroplane,
+  getSkull,
+  getBarrel,
+  getBox
+} from "./models";
+import Entity from "Entity";
+
+class Models extends React.Component {
+  render() {
+    return (
+      <View>
+        <Entity
+          style={{
+            color: "#ffffff",
+            transform: [{ scaleX: 0.1 }, { scaleY: 0.1 }, { scaleZ: 0.1 }]
+          }}
+          source={{ obj: asset("skull.obj") }}
+          wireframe={true}
+        />
+      </View>
+    );
+  }
+}
 
 export default class VrAdventureTraveller extends React.Component {
   constructor() {
@@ -48,6 +74,23 @@ export default class VrAdventureTraveller extends React.Component {
     });
   }
 
+  get3dShape() {
+    switch (this.state.currentDestinationId) {
+      case 0:
+        return getLavaPlanet();
+      case 1:
+        return getAeroplane();
+      case 2:
+        return getSkull();
+      case 3:
+        return getBarrel();
+      case 4:
+        return getBox();
+      default:
+        return null;
+    }
+  }
+
   render() {
     return (
       <View style={styles.panel}>
@@ -78,3 +121,4 @@ AppRegistry.registerComponent(
   "VrAdventureTraveller",
   () => VrAdventureTraveller
 );
+AppRegistry.registerComponent("Models", () => Models);

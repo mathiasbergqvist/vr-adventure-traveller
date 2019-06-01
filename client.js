@@ -1,7 +1,7 @@
 // This file contains the boilerplate to execute your React app.
 // If you want to modify your application's content, start in "index.js"
 
-import {ReactInstance} from 'react-360-web';
+import {ReactInstance, Location} from 'react-360-web';
 import WebVRPolyfill from 'webvr-polyfill';
 const polyfill = new WebVRPolyfill();
 
@@ -16,6 +16,11 @@ function init(bundle, parent, options = {}) {
   r360.renderToSurface(
     r360.createRoot('VrAdventureTraveller', { /* initial props */ }),
     r360.getDefaultSurface()
+  );
+
+  r360.renderToLocation(
+    r360.createRoot('Models', { /* initial props */ }),
+    new Location([0, 0.65, -1.8])
   );
 
   // Load the initial environment
