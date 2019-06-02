@@ -20,7 +20,7 @@ function init(bundle, parent, options = {}) {
 
   r360.renderToLocation(
     r360.createRoot('Models', { /* initial props */ }),
-    new Location([0, 0.65, -1.8])
+    new Location([0, 0.67, -1.8])
   );
 
   // Load the initial environment
